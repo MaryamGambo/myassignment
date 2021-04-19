@@ -1,0 +1,44 @@
+Question 1: What are undeclared and undefined values?
+  An Undeclared value is a variable that is declared but has been assigned no value. e.g x = 5;
+  An Undefined value is a variable that is declared but has been assigned no value. e.g var x;
+Question 2:What is called Vasriable typing in JS?
+  Variable typing in Javascript occurs when javascript assigns a datatype to a variable that has been assigned a value.
+Question 3: Explain the difference between "==" and "==="?
+  "==" is used for comparing the values of two variables but it ignores their datatypes.
+  "===" is used for comparing two variables by checking both their values and datatypes.
+Question 4: What is an undefined value in JS?
+  An undefined value in JS is a declared variable that has no assigned value.
+Question 5: How are Javascript and ECMAscript related?
+  ECMAscript is az standardization for creating a generalized purpose scripting language and javascript is an 
+  implementation of the ECMAscript specification that tells us how to use a scripting language.
+Question 6: List some features of JS?
+  Validating user's input.
+  It is platform independent.
+  It has the let/const/var for declaring variables.
+  It is template literal.
+  It can perform simple client-side calculations.
+Question 7: List some advantages of JS?
+  It can support all modern browsers and produce equivalent results.
+  It is employed everywhere on the web.
+  It is comparatively fast for the end users.
+  It is easy to debug and test.
+  It requires no compilation.
+Question 8: Differences between client-side JS and server-side JS?
+  1. The client side works at the front end and the source code is visible to the user while the server-side works in the
+  back end and the sourcecode is not visible to users.
+  2.The client-side JS works on the user's computer while the server-side JS works on the web server.
+  3.The client-side is insecure while the server side is relatively secure.
+Question 9: Are Java and Javascript the same. If yes why? if no why?
+  No, they are not the same require different ways to execute codes. Some of their differences are:
+  1.Java script is a code all- text while java code must be compiled.
+  2.Java script is specifically an object oriented scripting language while java is an object oriented programming language.
+  3.Java applications can run in any virtual machimne while javascript runs on browsers and servers.
+Question 10: How can we detect OS of the client machine usind JS? 
+  To detect the operating system on the client machine, one can use the navigator app version or navigator.user Agent property.
+  The navigator.app version property is a read only property that returns a strimg which represents the version information 
+  of the browser.
+  
+
+
+  
+  
