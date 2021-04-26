@@ -11,6 +11,16 @@ const capitalizeFletter = (str) => {
 console.log(capitalizeFletter('hello there'))
 
 // Q2. function to accept an argument and return the type
+const detectDatatype = (value) =>{
+    let dtypes = [Function, RegExp, Number,String,Boolean,Object], x, len;
+    if (typeof value ==="object" || typeof value === "function")
+    for (x = 0, len = dtypes.length; x < len; x++)
+    if (value instanceof dtypes[x])
+    return dtypes[x];
+
+    return typeof value;
+}
+console.log(detectDatatype(true))
 
 // Q3. program to find the area of a triangle of lengths 5,6,7.
   /*  the formula is A=squareroot of s(s-a)(s-b)(s-c)
@@ -58,7 +68,7 @@ const countVowel = (str) => {
 }
 console.log(countVowel('hello everyone'))
 
-/* Q7.function that accepts anumber as a parameter and check if
+/* Q7.function that accepts a number as a parameter and check if
   it is prime or not */
 const isPrime = (num) => {
     for(let i = 2; i < num; i++)
@@ -90,7 +100,7 @@ const isPalindrome = (str) => {
 
     return false;
 }
-console.log(isPalindrome('anna'))
+console.log(isPalindrome('eye'))
 
 // Q10. function that generates all combination of a string
 const combination = (str) => {
@@ -119,6 +129,14 @@ const longestWord = (str) => {
 
 /* Q13. program to extract out the values at the specified indexes 
  from a specified object */
+ const valueExtractor = (arr,prop) =>{
+     let extractValue = [];
+     for(let i=0; i< arr.length; ++i)
+     extractValue.push(arr[i][prop])
+     return extractValue;
+ }
+ const obj = [{a:1, b:2},{a:4, b:7}]
+ console.log(valueExtractor(obj, 'b'))
 
 // Q14. program to generate a random hexadecimal color code
 const colorGenerator = (str) => {
@@ -137,14 +155,54 @@ const byteSize = (str) => {
 console.log(byteSize('hello there'))
 
 // Q16. program to measure the time taken by a function to execute
+const timer = () =>{
+    let start = window.performance.now();
+     colorGenerator()
+    var end = window.performance.now();
+    let dur = end - start;
+    return dur;
+}
+console.log(timer())
+
 
 /* Q17. program to create a function that invokes each provided 
 function with the arguments it receives and returns the results */
+const functionInvoker = () =>{
+    const over = (...fns) => (...args) => fns.map(fn =>fn.apply(null,args));
+    const min = over(Math.min);
+    console.log(min(9,3,5));
+}
+console.log(functionInvoker())
+
 
 /* Q18. program to perform a deep comparison between two values 
 to determine if they are equivalent */
+const equal = (a,b) =>{
+    if (a === b) return true;
+    if (a instanceof Date && b instanceof Date)
+     return a.getTime() === b.getTime();
+    if (!a || !b ||(typeof a !== 'object' && typeof b !== 'object'))
+     return a === b;
+    if (a === null || a === undefined || b === null || b === undefined)
+     return false;
+    if (a.prototype !== b.prototype) return false;
+    let keys = Object.keys(a);
+    if (keys.length !== Object.keys(b).length) return false;
+    return keys.every(k => equal(a[k], b[k]));
+
+};
+console.log(equal({ a: [2,{ e: 3}], b:[7],c: 'ball'},{ a: [2,{ e: 3}], b:[7],c: 'cat'}))
 
 /* Q19. program to detect whether the website is being opened in a 
 mobile device or a desktop/laptop */
 
 // Q20. program to hash a given input string into a whole number
+const hash = (str) =>{
+    let arr = str.split('');
+    return arr.reduce(
+      (hashCode, currentVal) =>
+        (hashCode = currentVal.charCodeAt(0) + (hashCode << 6) +
+        (hashCode << 16) - hashCode),0
+    );
+};
+console.log(hash('name'))
