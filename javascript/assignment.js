@@ -35,9 +35,9 @@ console.log(area);
 
 /* Q4. program to calculate the area and perimeter of a rectangle and
 display it to the user DOM */
-const calculate = () =>{
-    let length = prompt('Enter the length of the rectangle:');
-    let breadth = prompt('Enter the breadth of the rectangle:');
+window.onload = calculate = () =>{
+    let length = document.getElementById('length').value;
+    let breadth = document.getElementById('breadth').value;
     let perimeter = (2 * length) + (2 * breadth);
     let area = length * breadth;
 
@@ -45,7 +45,7 @@ const calculate = () =>{
      "Area of rectangle:" + area;
     document.getElementById('perimeter').innerHTML = 
     "Perimeter of rectangle:" + perimeter; 
-}
+};console.log(calculate)
  
 // Q5. function to reverse a number
 const reverseNumber = (num) =>{
@@ -196,6 +196,7 @@ console.log(equal({ a: [2,{ e: 3}], b:[7],c: 'ball'},{ a: [2,{ e: 3}], b:[7],c: 
 /* Q19. program to detect whether the website is being opened in a 
 mobile device or a desktop/laptop */
 
+
 // Q20. program to hash a given input string into a whole number
 const hash = (str) =>{
     let arr = str.split('');
@@ -206,3 +207,25 @@ const hash = (str) =>{
     );
 };
 console.log(hash('name'))
+
+
+// program to grade scores
+const scoreGrader = () => {
+    let score, grade
+    score = document.getElementById('score').value;
+    grade = (score >= 70) ? "A Excellent" :
+     (score >= 60 )? "B Very Good":
+     (score >= 50) ? "C Good":
+     (score >= 40) ? "D Fair":
+     (score >= 35 )? "E Poor":" F Fail"
+     
+    document.getElementById('demo').innerHTML = grade 
+}
+
+// program to change backgroung color using user input
+const changeBcolor = (event)=> {
+    event.preventDefault();
+    document.body.style.background = document.getElementById('color').value;
+}
+
+
