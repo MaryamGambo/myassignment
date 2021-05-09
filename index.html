@@ -6,24 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src= "javascript/assignment.js"></script>
+   
 </head>
-<body >
- <!--Question 4-->
- <h3>Area and Perimeter of a rectangle</h3>
- <p>Click on the button to input values</p>  
- 
- <form action = "">
- <label for = "length">Length</label>
- <input type ="text" id = "length"/> <br> <br>
- <label for = "breadth">Breadth</label>
- <input type ="text" id = "breadth"/> <br> <br>
-
- <button onSubmitHandler ="calculate()">Calculate</button>
-</form>
-
- <p id="area"></p>
- <p id="perimeter"></p> 
-
 
  <!--program to grade scores-->
  <h3>Score Grading System</h3> 
@@ -45,10 +29,30 @@
     <input type ="text" id ="color"/> <br> <br>
 
     <button onclick = "changeBcolor(event)">Submit</button>
-
-    
-
 </form>
+
+<!-- program to accept a number from the user and insert dashes between each two even numbers-->
+<h3>Insert hypen between even numbers</h3> 
+ <p>Input a number:</p> <br>
+<form action = "">
+ <label for = "number">Number</label>   
+<input type ="text" id="number" /> <br> <br>
+
+<button onclick="insert_dash(event)">Submit</button>
+</form>
+
+<p id="even"></p> 
+
+<!-- program to accept items from a user and add to a blank array and display the items -->
+<h3>Add items to a blank array and display</h3> 
+<p>Input an item:</p> <br>
+    <form action= ""  >
+
+        <input type = "text" name="arr"  id = "arr"> <br> <br>
+        <button type="submit" onclick="userInput(event)">Submit</button>
+    </form>
+    <ul id='list'>
+    </ul>
 
 
 </body>
