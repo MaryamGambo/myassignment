@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src= "javascript/assignment2.js"></script>
+</head>
+<body>
+    
+    <body >
+        <!--Question 4-->
+        <h3>Area and Perimeter of a rectangle</h3>
+        <p>Click on the button to input values</p>  
+        
+        <form action = ""  onsubmit="calculate(e)" >
+        <label for = "length">Length</label>
+        <input type ="text" id = "length"/> <br> <br>
+        <label for = "width">Width</label>
+        <input type ="text" id = "width"/> <br> <br>
+       
+        <button type="submit">Calculate</button>
+       </form>
+       
+        <p id="area"></p>
+        <p id="perimeter"></p> 
+
+        <!--Email validator-->
+        <h3>Email Validation</h3>
+        <p>Enter your email:</p>
+
+        <form action = ""  onsubmit="emailValidator(event)" >
+        <label for ="email">Email</label>
+        <input type = "text" id="email"> <span id = "emailErr"></span> <br> <br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <!--word count-->
+        <h3>Word Count</h3>
+        <p>Enter a string</p>
+
+        <form action = ""  onsubmit = "wordCount(event)" >
+        <label for ="string">String</label>
+        <input type = "text" id="string">  <br> <br>
+        <button type="submit" >Submit</button>
+        </form>
+
+        <p id="str"></p>
+
+</body>
+</html>
