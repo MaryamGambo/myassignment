@@ -33,19 +33,7 @@ const s = (side1 + side2 + side3)/2;
 const area = Math.sqrt(s*((s-side1)*(s-side2)*(s-side3)));
 console.log(area);
 
-/* Q4. program to calculate the area and perimeter of a rectangle and
-display it to the user DOM */
-window.onload = calculate = () =>{
-    let length = document.getElementById('length').value;
-    let breadth = document.getElementById('breadth').value;
-    let perimeter = (2 * length) + (2 * breadth);
-    let area = length * breadth;
 
-    document.getElementById('area').innerHTML =
-     "Area of rectangle:" + area;
-    document.getElementById('perimeter').innerHTML = 
-    "Perimeter of rectangle:" + perimeter; 
-};console.log(calculate)
  
 // Q5. function to reverse a number
 const reverseNumber = (num) =>{
@@ -227,5 +215,148 @@ const changeBcolor = (event)=> {
     event.preventDefault();
     document.body.style.background = document.getElementById('color').value;
 }
+ /* program to iterate integers from 1 to 100 and print out fizz 
+ for multiples of three,buzz for five and fizzbuzz for both five and three*/
+const fizzbuzz = () => {
+    for (var i = 0; i <= 100; ++i){
+        switch(true) {
+         case (i % 3===0 && i % 5 === 0):
+          console.log(i +' is divisible by 3 and 5');
+          break 
+         case (i % 3 === 0):
+          console.log( i +' is divisible by 3');
+          break
+         case(i % 5 === 0):
+          console.log( i + " is divisible by 5");
+         break
+         default:
+          console. log(i)
+        }
+    } 
+}; console.log(fizzbuzz());
 
+// program to sum the multiples of 3 and 5 under 1000
+const multiples = () => {
+    let sum = 0;
+    for (let i = 0; i < 1000; i++){
+        if (i % 3 === 0 || i % 5 === 0){
+            sum += i;
+        }
+    }return sum
+}; console.log(multiples());
+
+// function to move an array element from one position to another
+const arrayMover = (arr, old_index, new_index) => {
+    while (old_index < 0) {
+        old_index += arr.length;
+    }
+    while (new_index < 0) {
+        new_index += arr.length;
+    }
+    if (new_index >= arr.length){
+        let k = new_index - arr.length;
+        while ((k--) + 1) {
+            arr.push(undefined);   
+        }
+    } arr.splice(new_index, 0, arr.splice(old_index, 1) [0]);
+    return arr;
+}; console.log(arrayMover([1, 2, 3, 4, 5], 0, 2 ));
+
+/* function for loop to iterate from 0 to 15, check for odd and even numbers
+and display a message to the screen*/ 
+const oddEven = () => {
+    for (let i=0; i <=15; i++){
+        if (i === 0) {
+            console.log( i + " is even");
+        }
+        else if (i % 2 === 0){
+            console.log(i + " is even");
+        }
+        else {
+            console.log(i + " is odd");
+        }
+    }
+}; console.log(oddEven());
+
+//program to find and print the first five happy numbers
+const isHappynumber = (num) => {
+    let m,n ;
+    let c = [];
+
+    while(num != 1 && c[num] !== true){
+        c[num] = true;
+        m = 0;
+        while (num > 0) {
+            n = num % 10;
+            m += n * n;
+            num = (num - n) / 10;
+        }num = m;
+    } return (num == 1);
+}
+    let cnt = 5;
+    let num = 1;
+    let f5 = '';
+    while(cnt-- >0){
+        while(! isHappynumber(num))
+        num++ ;
+      f5 = f5 + (num + ", ");
+        num++;   
+    } console.log('first 5 happy numbers are :' + f5);
+
+// functtion to split a string and convert it into an array of words
+const string_split = (str) => {
+    return str.trim().split(" ");
+};
+console.log(string_split("hello everyone"))  
+
+// function to uncapitalize the first character of a string
+const uncapitalize = (str) => {
+    return str.charAt(0).toLowerCase() + str.slice(1);
+};
+console.log(uncapitalize('Hello everyone'))
+
+// program to accept a number from the user and insert dashes between each two even numbers
+ const insert_dash = (event) => {
+     event.preventDefault();
+     let str = document.getElementById('number').value
+     let strArr = str.split('');
+     let numArr =  strArr.map(Number);
+     for( let i = 0; i < numArr.length; i++){
+         if(numArr[i - 1] % 2 === 0 && numArr[i] % 2 === 0){
+             numArr.splice(i, 0, "-");
+         }
+     } 
+     document.getElementById('even').innerHTML  = numArr.join("");
+    };
+
+    //  program to add items in a blank array and display it to the users 
+    const userInput = (event) =>{
+        event.preventDefault();
+        let text = ''
+        let array =[]
+        let userIn = document.getElementById('arr').value;
+        array.push(userIn)
+        for (var i = 0; i <array.length; i++){ 
+          text +=array[i];
+        }
+        let li = document.createElement("li")
+        let node = document.createTextNode(text)
+        li.appendChild(node)
+       document.getElementById('list').appendChild(li).innerHTML = text;
+      }
+
+      // program to remove duplicate items from an array (ignore case sensitivity)
+
+      //function to filter false, null, 0 and blank values from an array
+      const filter_array = (arr) => {
+          arr = arr.filter(isEligible);
+          return arr;
+      }
+      const isEligible = (value)=> {
+          if (value !== false || value !== null || value !== 0 || value !== ""){
+              return value;
+          }
+      };
+     console.log(filter_array([58,'', 'abcd', true,null,false, 0]));
+     
 
