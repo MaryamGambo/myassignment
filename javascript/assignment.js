@@ -198,7 +198,8 @@ console.log(hash('name'))
 
 
 // program to grade scores
-const scoreGrader = () => {
+const scoreGrader = (event) => {
+    event.preventDefault();
     let score, grade
     score = document.getElementById('score').value;
     grade = (score >= 70) ? "A Excellent" :
