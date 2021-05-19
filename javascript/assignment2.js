@@ -1,22 +1,22 @@
 /* Q4. program to calculate the area and perimeter of a rectangle and
 display it to the user DOM */
-const calculate = (e) => {
-    //e.preventdefault();
+const calculate = (event) => {
+    event.preventDefault();
     console.log('hhh')
     let length = document.getElementById('length').value;
     let width = document.getElementById('width').value;
     area = length * width;
     perimeter = (2 * length) + (2 * width);
-     document.getElementById(area).innerHTML = 
+     document.getElementById('area').innerHTML = 
      'Area of the rectangle' + area;
-     document.getElementById(perimeter).innerHTML =
+     document.getElementById('perimeter').innerHTML =
      'Perimeter of the rectangle' + perimeter;
 
 };
 
 // write a pattern that matches email addresses
 const emailValidator = (event) => {
-    event.preventdefault;
+    event.preventDefault();
     let email = document.getElementById('email').value;
     let emailRegex = 
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-z]{2,}))$/;
@@ -41,12 +41,14 @@ const trim = (str) => {
 
 // program to count number of words in a string
 const wordCount = (event) => {
-    event.preventdefault;
+    event.preventDefault();
     str1 = document.getElementById('string').value;
     str1 = str1.replace(/(^\s*)|(\s*$)/gi, ""); //exclude white spaces
-    str1 = str1.replace(/[ ]{2,}/gi, " ");  // cpnvert spaces to 1
+    str1 = str1.replace(/[ ]{2,}/gi, " ");  // convert spaces to 1
     str1 = str1.replace(/\n /, "\n"); //exclude newline with a start spacing
-    str1 = document.getElementById('str').value = str1.split(' ').length;
+    document.getElementById('str').innerHTML = 
+    'The number of words are ' + str1.split(' ').length;
+   
 }
 
 
