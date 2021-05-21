@@ -136,14 +136,14 @@ console.log('Length of the object is ' + objLength());
 const isBoolean = (value) => {
     return value === true  || value === false || toString.call(value) ==='[object Boolean]';
 } 
-console.log(isBoolean(true))
+console.log(isBoolean(true ))
 
 // program to validate whether a given value is object or not
 const isObject = (value) => {
     let datatype = typeof value;
     return datatype === 'function'|| datatype === 'object' && !!value;
 }
-console.log(isObject({name: 'mary'}));
+console.log(isObject({name: 'mary'} ));
 
 // function to validate whether a given value type is pure json or not
 const ispure_json = (value) => {
